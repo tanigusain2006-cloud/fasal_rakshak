@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fasal Rakshak - Decentralized Parametric Insurance for Indian Farmers</title>
+    <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background-color: #f7fafc;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #68d391 0%, #4fd1c7 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e6fffa 0%, #f0fff4 100%);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #2d3748;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #4a5568;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(56, 161, 105, 0.3);
+        }
+
+        /* Icons */
+        .icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+        }
+
+        /* Sections */
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2d3748;
+        }
+
+        /* About Section */
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            color: #4a5568;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 1.5rem;
+            background: #f7fafc;
+            border-radius: 10px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #38a169;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            background: #f7fafc;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .step {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            background: #68d391;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-weight: bold;
+        }
+
+        /* Technology Stack */
+        .technology {
+            background: white;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .tech-item {
+            text-align: center;
+            padding: 2rem;
+            background: #f7fafc;
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        .tech-item:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Farmer Signup */
+        .signup {
+            background: linear-gradient(135deg, #e6fffa 0%, #f0fff4 100%);
+        }
+
+        .signup-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #68d391;
+        }
+
+        /* Contract Section */
+        .contract {
+            background: white;
+        }
+
+        .contract-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .contract-card {
+            background: #f7fafc;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #68d391;
+        }
+
+        .contract-card h3 {
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+
+        .contract-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contract-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .contract-features li:before {
+            content: "✓";
+            color: #38a169;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #68d391;
+        }
+
+        .footer-section a {
+            color: #cbd5e0;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: #68d391;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #4a5568;
+            color: #a0aec0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .signup-form {
+                margin: 0 1rem;
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+                </svg>
+                Fasal Rakshak
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#technology">Technology</a></li>
+                <li><a href="#signup">Join Us</a></li>
+                <li><a href="#contracts">Contracts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Protecting Indian Farmers with Smart Insurance</h1>
+                <p>Get instant, transparent payouts during crop losses through blockchain-powered parametric insurance. No paperwork, no delays - just fair protection when you need it most.</p>
+                <a href="#signup" class="cta-button">Join Pilot Program</a>
+            </div>
+        </section>
+
+        <section id="about" class="section about">
+            <div class="container">
+                <h2 class="section-title">About Fasal Rakshak</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Fasal Rakshak is India's first decentralized parametric insurance platform designed specifically for farmers. Using blockchain technology and smart contracts, we provide instant, transparent payouts when weather conditions trigger crop losses.</p>
+                        
+                        <p>Traditional crop insurance involves lengthy claim processes, paperwork, and delays. Our platform eliminates these barriers by automatically triggering payouts based on verified weather data, ensuring farmers receive support exactly when they need it.</p>
+                        
+                        <p>Built by farmers, for farmers - we understand the challenges of Indian agriculture and are committed to creating a more resilient farming community.</p>
+                    </div>
+                    <div>
+                        <svg class="icon" viewBox="0 0 24 24" fill="#68d391" style="width: 200px; height: 200px;">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-number">500+</div>
+                        <div>Farmers Protected</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">₹2Cr+</div>
+                        <div>Claims Paid</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">24hrs</div>
+                        <div>Average Payout Time</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">15+</div>
+                        <div>States Covered</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="section how-it-works">
+            <div class="container">
+                <h2 class="section-title">How It Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <svg class="icon" viewBox="0 0 24 24" fill="#8B4513">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <h3>Register Your Farm</h3>
+                        <p>Provide basic details about your farm location, crop type, and farming area. Our system verifies your information using satellite data.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <svg class="icon" viewBox="0 0 24 24" fill="#87CEEB">
+                            <path d="M6.05 8.05c-2.73 2.73-2.73 7.17 0 9.9s7.17 2.73 9.9 0c2.73-2.73 2.73-7.17 0-9.9s-7.17-2.73-9.9 0zM9 13c0-1.66 1.34-3 3-3s3 1.34 3 3-1.34 3-3 3-3-1.34-3-3z"/>
+                        </svg>
+                        <h3>Weather Monitoring</h3>
+                        <p>Our smart contracts continuously monitor weather data from multiple sources including satellites, weather stations, and IoT sensors.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <svg class="icon" viewBox="0 0 24 24" fill="#68d391">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                        </svg>
+                        <h3>Smart Contract Execution</h3>
+                        <p>When weather conditions meet the trigger parameters (drought, excessive rain, etc.), smart contracts automatically execute payouts.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <svg class="icon" viewBox="0 0 24 24" fill="#38a169">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                        <h3>Instant Payout</h3>
+                        <p>Receive compensation directly to your digital wallet or bank account within 24 hours. No paperwork, no waiting periods.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="technology" class="section technology">
+            <div class="container">
+                <h2 class="section-title">Technology Stack</h2>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <svg class="icon" viewBox="0 0 24 24" fill="#68d391">
+                            <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+                        </svg>
+                        <h3>Blockchain</h3>
+                        <p>Ethereum-based smart contracts ensure transparency and immutable record-keeping</p>
+                    </div>
+                    
+                    <div class="tech-item">
+                        <svg class="icon" viewBox="0 0 24 24" fill="#87CEEB">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <h3>Satellite Data</h3>
+                        <p>Real-time weather and crop monitoring using advanced satellite imagery</p>
+                    </div>
+                    
+                    <div class="tech-item">
+                        <svg class="icon" viewBox="0 0 24 24" fill="#8B4513">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                        </svg>
+                        <h3>IoT Sensors</h3>
+                        <p>Ground-level sensors provide accurate local weather and soil condition data</p>
+                    </div>
+                    
+                    <div class="tech-item">
+                        <svg class="icon" viewBox="0 0 24 24" fill="#38a169">
+                            <path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zm2.5-9H19V1h-2v1H7V1H5v1H4.5C3.67 2 3 2.67 3 3.5v15C3 19.33 3.67 20 4.5 20h15c.83 0 1.5-.67 1.5-1.5v-15C21 2.67 20.33 2 19.5 2z"/>
+                        </svg>
+                        <h3>AI Analytics</h3>
+                        <p>Machine learning algorithms predict weather patterns and optimize coverage</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="signup" class="section signup">
+            <div class="container">
+                <h2 class="section-title">Join Our Pilot Program</h2>
+                <form class="signup-form" onsubmit="handleSignup(event)">
+                    <div class="form-group">
+                        <label for="farmer-name">Full Name</label>
+                        <input type="text" id="farmer-name" name="farmer-name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="state">State</label>
+                        <select id="state" name="state" required>
+                            <option value="">Select State</option>
+                            <option value="andhra-pradesh">Andhra Pradesh</option>
+                            <option value="bihar">Bihar</option>
+                            <option value="gujarat">Gujarat</option>
+                            <option value="haryana">Haryana</option>
+                            <option value="karnataka">Karnataka</option>
+                            <option value="madhya-pradesh">Madhya Pradesh</option>
+                            <option value="maharashtra">Maharashtra</option>
+                            <option value="punjab">Punjab</option>
+                            <option value="rajasthan">Rajasthan</option>
+                            <option value="tamil-nadu">Tamil Nadu</option>
+                            <option value="uttar-pradesh">Uttar Pradesh</option>
+                            <option value="west-bengal">West Bengal</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="farm-size">Farm Size (in acres)</label>
+                        <input type="number" id="farm-size" name="farm-size" min="0.1" step="0.1" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="crop-type">Primary Crop</label>
+                        <select id="crop-type" name="crop-type" required>
+                            <option value="">Select Crop</option>
+                            <option value="rice">Rice</option>
+                            <option value="wheat">Wheat</option>
+                            <option value="cotton">Cotton</option>
+                            <option value="sugarcane">Sugarcane</option>
+                            <option value="maize">Maize</option>
+                            <option value="soybean">Soybean</option>
+                            <option value="pulses">Pulses</option>
+                            <option value="vegetables">Vegetables</option>
+                            <option value="fruits">Fruits</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="cta-button" style="width: 100%;">Join Pilot Program</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="contracts" class="section contract">
+            <div class="container">
+                <h2 class="section-title">Insurance Contracts</h2>
+                <div class="contract-types">
+                    <div class="contract-card">
+                        <h3>Drought Protection</h3>
+                        <p>Automatic payouts when rainfall drops below critical levels for your crop type and region.</p>
+                        <ul class="contract-features">
+                            <li>Coverage: Up to ₹50,000 per acre</li>
+                            <li>Trigger: 30% below normal rainfall</li>
+                            <li>Premium: 3-5% of sum insured</li>
+                            <li>Payout: Within 24 hours</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="contract-card">
+                        <h3>Excess Rainfall Protection</h3>
+                        <p>Protection against crop damage due to excessive rainfall and flooding conditions.</p>
+                        <ul class="contract-features">
+                            <li>Coverage: Up to ₹40,000 per acre</li>
+                            <li>Trigger: 150% above normal rainfall</li>
+                            <li>Premium: 2-4% of sum insured</li>
+                            <li>Payout: Within 24 hours</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="contract-card">
+                        <h3>Temperature Stress Protection</h3>
+                        <p>Coverage for crop losses due to extreme temperature variations during critical growth periods.</p>
+                        <ul class="contract-features">
+                            <li>Coverage: Up to ₹35,000 per acre</li>
+                            <li>Trigger: Temperature beyond crop tolerance</li>
+                            <li>Premium: 2-3% of sum insured</li>
+                            <li>Payout: Within 24 hours</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Fasal Rakshak</h3>
+                    <p>Empowering Indian farmers with blockchain-based parametric insurance for a more resilient agricultural future.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#about">About Us</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#technology">Technology</a>
+                    <a href="#contracts">Contracts</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <a href="#" onclick="showContact()">Contact Us</a>
+                    <a href="#" onclick="showFAQ()">FAQ</a>
+                    <a href="#" onclick="showHelp()">Help Center</a>
+                    <a href="#" onclick="showPrivacy()">Privacy Policy</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <a href="#" onclick="openSocial('twitter')">Twitter</a>
+                    <a href="#" onclick="openSocial('linkedin')">LinkedIn</a>
+                    <a href="#" onclick="openSocial('telegram')">Telegram</a>
+                    <a href="#" onclick="showNewsletter()">Newsletter</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Fasal Rakshak. All rights reserved. Built with ❤️ for Indian farmers.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function handleSignup(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            // Simulate form submission
+            const button = event.target.querySelector('button');
+            const originalText = button.textContent;
+            
+            button.textContent = 'Submitting...';
+            button.disabled = true;
+            
+            setTimeout(() => {
+                button.textContent = 'Application Submitted! ✓';
+                button.style.background = '#38a169';
+                
+                // Show success message
+                const successMessage = document.createElement('div');
+                successMessage.style.cssText = `
+                    background: #f0fff4;
+                    border: 2px solid #68d391;
+                    color: #2f855a;
+                    padding: 1rem;
+                    border-radius: 8px;
+                    margin-top: 1rem;
+                    text-align: center;
+                    font-weight: bold;
+                `;
+                successMessage.textContent = 'Thank you! We will contact you within 48 hours to complete your enrollment.';
+                
+                event.target.appendChild(successMessage);
+                
+                // Reset form after 3 seconds
+                setTimeout(() => {
+                    event.target.reset();
+                    button.textContent = originalText;
+                    button.disabled = false;
+                    button.style.background = '';
+                    successMessage.remove();
+                }, 3000);
+            }, 1500);
+        }
+
+        function showContact() {
+            const modal = createModal('Contact Us', `
+                <p><strong>Phone:</strong> +91-9876543210</p>
+                <p><strong>Email:</strong> support@fasalrakshak.in</p>
+                <p><strong>Address:</strong> Bangalore, Karnataka, India</p>
+                <p><strong>Business Hours:</strong> Mon-Sat, 9 AM - 6 PM IST</p>
+            `);
+        }
+
+        function showFAQ() {
+            const modal = createModal('Frequently Asked Questions', `
+                <div style="text-align: left;">
+                    <h4>How quickly do I receive payouts?</h4>
+                    <p>Payouts are processed automatically within 24 hours when weather conditions trigger the smart contract.</p>
+                    
+                    <h4>What crops are covered?</h4>
+                    <p>We currently cover rice, wheat, cotton, sugarcane, maize, soybean, and various pulses and vegetables.</p>
+                    
+                    <h4>How is the weather data verified?</h4>
+                    <p>We use multiple data sources including satellites, government weather stations, and IoT sensors for accuracy.</p>
+                    
+                    <h4>Is there a minimum farm size requirement?</h4>
+                    <p>No, we welcome farmers with any farm size, from small holdings to large commercial farms.</p>
+                </div>
+            `);
+        }
+
+        function showHelp() {
+            const modal = createModal('Help Center', `
+                <div style="text-align: left;">
+                    <h4>Getting Started</h4>
+                    <p>1. Register your farm details<br>2. Choose your insurance coverage<br>3. Pay the premium<br>4. Your coverage begins immediately</p>
+                    
+                    <h4>Understanding Payouts</h4>
+                    <p>Payouts are triggered automatically based on weather data. No claim filing needed!</p>
+                    
+                    <h4>Technical Support</h4>
+                    <p>For technical issues, contact our support team at tech@fasalrakshak.in</p>
+                </div>
+            `);
+        }
+
+        function showPrivacy() {
+            const modal = createModal('Privacy Policy', `
+                <div style="text-align: left;">
+                    <p>We are committed to protecting your privacy and personal information.</p>
+                    
+                    <h4>Data Collection</h4>
+                    <p>We collect only necessary information for insurance purposes: farm location, crop type, and contact details.</p>
+                    
+                    <h4>Data Usage</h4>
+                    <p>Your data is used solely for insurance coverage and weather monitoring. We never sell or share personal information.</p>
+                    
+                    <h4>Data Security</h4>
+                    <p>All data is encrypted and stored securely on blockchain networks.</p>
+                </div>
+            `);
+        }
+
+        function showNewsletter() {
+            const modal = createModal('Newsletter Signup', `
+                <p>Stay updated with the latest news and updates from Fasal Rakshak.</p>
+                <form onsubmit="handleNewsletter(event)" style="margin-top: 1rem;">
+                    <input type="email" placeholder="Enter your email" required style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 2px solid #e2e8f0; border-radius: 8px;">
+                    <button type="submit" class="cta-button" style="width: 100%;">Subscribe</button>
+                </form>
+            `);
+        }
+
+        function handleNewsletter(event) {
+            event.preventDefault();
+            const button = event.target.querySelector('button');
+            button.textContent = 'Subscribed! ✓';
+            button.style.background = '#38a169';
+            setTimeout(() => {
+                document.querySelector('.modal').remove();
+            }, 1500);
+        }
+
+        function openSocial(platform) {
+            const urls = {
+                twitter: 'https://twitter.com/fasalrakshak',
+                linkedin: 'https://linkedin.com/company/fasalrakshak',
+                telegram: 'https://t.me/fasalrakshak'
+            };
+            window.open(urls[platform], '_blank', 'noopener,noreferrer');
+        }
+
+        function createModal(title, content) {
+            const modal = document.createElement('div');
+            modal.className = 'modal';
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.5);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 1000;
+            `;
+            
+            modal.innerHTML = `
+                <div style="background: white; padding: 2rem; border-radius: 15px; max-width: 500px; width: 90%; max-height: 80%; overflow-y: auto;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h3 style="margin: 0; color: #2d3748;">${title}</h3>
+                        <button onclick="this.closest('.modal').remove()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #4a5568;">&times;</button>
+                    </div>
+                    ${content}
+                </div>
+            `;
+            
+            modal.onclick = (e) => {
+                if (e.target === modal) modal.remove();
+            };
+            
+            document.body.appendChild(modal);
+            return modal;
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9928b88f11ca59fc',t:'MTc2MTEzMzIzOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
